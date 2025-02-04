@@ -1,0 +1,42 @@
+import socket
+import sys
+
+try:
+     #defining the tcp socket
+     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+     print("Socket created successfully!")
+
+except socket.error as err:
+     print(f'socket creation failed with error {err}')
+
+#Define port and hostname
+port = (input('port number:'))
+hostname = input('enter hostname:')
+
+try:
+     port = int(port)
+     if not (0 < port <= 65535):
+           print("Invalid port number. port number must be between 1 and 65535!")
+           sys.exit()
+
+except ValueError:
+      print('Invalid port number. please enter numeric value.')
+      sys.exit()
+      
+try:
+     #resolving hostname to ip address
+     host_ip= socket.gethostbyname(hostname)
+     print(f'Resolved IP address for {hostname}: {host_ip}')
+except socket.gaierror:   #Gaierror = Problem with DNS
+          print('error resolving the host')
+          sys.exit
+try:
+      #connecting to the remote server
+      s.connect((host_ip, port))
+      print(f'Socket has successfully connected to {hostname} on port {host_ip}')
+except socket.error as err:
+      print(f'Connection failed with error {err}')
+finally: 
+      #socket closed
+      s.close()
+      print('Socket Closed')      
