@@ -14,7 +14,7 @@ This script uses Python's `socket` library to establish a connection between a c
 
 ## Features
 
-- **Socket Creation**: The script creates a TCP socket using the IPv4 address family and stream-based socket type.
+- **Socket Creation**: The script creates a TCP socket using the IPv4 address family.
 - **Port Number Validation**: It ensures that the entered port number is between 1 and 65535 (inclusive).
 - **Hostname Resolution**: The script resolves the given hostname to an IP address using DNS lookup.
 - **Error Handling**: It gracefully handles errors during socket creation, hostname resolution, and connection attempts.
