@@ -15,13 +15,13 @@ This script uses Python's `socket` library to establish a connection between a c
 ## Features
 
 - **Socket Creation**: The script creates a TCP socket using the IPv4 address family.
-- **Port Number Validation**: It ensures that the entered port number is between 1 and 65535 (inclusive).
+- **Port Number Validation**: It ensures that the entered port number is any number from 1-65535.
 - **Hostname Resolution**: The script resolves the given hostname to an IP address using DNS lookup.
 - **Error Handling**: It gracefully handles errors during socket creation, hostname resolution, and connection attempts.
 
 ## Prerequisites
 
-- Python 3.x
+- Python
 - Basic understanding of networking concepts, such as IP addresses, ports, and TCP communication.
 
 ## How to Run
